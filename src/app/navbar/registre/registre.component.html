@@ -1,0 +1,33 @@
+<br><br>
+      <div class="my-3 p-4 bg-white rounded shadow-sm">
+          <div class="row">
+          <div class="col-md-6">
+    <form [formGroup]="userForm" class="form-signin">
+      <div  class="text-center mb-4">
+     </div>
+     <div class="form-label-group">
+      <input type="nom" id="inputNom" class="form-control" placeholder="Nom" required="" autofocus=""formControlName="nom">
+      <label for="inputNom">Nom</label>
+    </div>
+    <div class="form-label-group">
+      <input type="prenom" id="inputPrenom" class="form-control" placeholder="prenom" required="" autofocus="" formControlName="prenom">
+      <label for="inputPrenom">Prenom</label>
+    </div>
+            <div class="form-label-group">
+        <input type="password"  class="form-control" placeholder="Password" required=""formControlName="password">
+        
+        <label for="inputPassword">Password</label>
+      </div>
+      
+      <button class="btn btn-lg btn-dark btn-block"(click)="ajouter()" type="submit">Sign in</button>
+        </form>
+    <br>
+    
+  </div>
+  <div class="col-md-6">
+    <div>
+      <img src="../../../assets/image4.jpg">
+    </div>
+  </div>
+ </div>
+ </div> 

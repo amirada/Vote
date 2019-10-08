@@ -1,0 +1,8 @@
+.mgback
+{
+background-image: url("./assets/quate-section-background.png");
+background-repeat:no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+}

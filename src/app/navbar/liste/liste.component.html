@@ -1,0 +1,85 @@
+<br><br>
+<div class="my-3 p-4 bg-white rounded shadow-sm">
+  <div ng-app ng-controller="MethodName">
+    My current date is {{myDate | date:'yyyy-MM-dd'}}. <br><br><br>
+</div>
+    <table class="table table-bordered" >
+      <thead>
+      <tr>
+        <th> TITRE </th>
+        <th> DESCRIPTION</th>
+        <th>VOTER</th>
+  
+        <th> POURCENTAGE </th>
+        
+        
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor= "let ar of articles; let i = index  ">
+        <td>{{ar.titre}}</td>
+        <td>{{ar.numero}}</td>
+        
+         <td ><button data-toggle="modal" data-target="#myModal" >Voter </button></td>
+         <td ><button data-toggle="modal" data-target="#myModal1" (click)="pourcentage()">Pourcentage </button></td>
+
+        </tr>
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Voter ici:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                <form [formGroup]="modform">
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Vote</label>
+                    <select formControlName="date" class="form-control mb-3" style="display: block !important">
+                    
+  
+                    <option *ngFor="let acc of atsexe" [value]="acc">{{acc}}</option>
+  
+  
+                  </select>
+                    <!-- <input type="datetime" class="form-control"   placeholder="voter ici" formControlName="date"> -->
+                  
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="voter(ar,i)">Voter</button>
+
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="myModal1" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Pourcentage de Vote:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                
+                  
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  
+  
+                </div>
+            </div>
+          </div>
+        </div>
+      </tbody>
+      
+    </table>
+   </div>
+ 
